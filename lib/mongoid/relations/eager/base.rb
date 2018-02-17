@@ -76,7 +76,7 @@ module Mongoid
           criteria.inclusions = criteria.inclusions - [ @metadata ]
           criteria.each do |doc|
             yield doc
-          end
+          end unless keys_from_docs.blank?
         end
 
         # Set the pre-loaded document into its parent.
